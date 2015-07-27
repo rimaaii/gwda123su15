@@ -1,1 +1,3 @@
-# gwda123su15
+# GWDA123 Summer 2015
+
+### Programming Logic

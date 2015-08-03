@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<title>Horoscope</title>
+</head>
+<body>
+
+<script>
+var name = prompt("What's your name?");
+var sign = prompt("What's your sign?");
+
+//Wrap this into h1
+document.write("<h1>Hello, " + name + "</h1>");
+document.write("<h2>You are a: " + sign + "</h2>");
+
+if (sign.toLowerCase() == "aries"){
+	document.write("<img width='200' src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Aries.svg/2000px-Aries.svg.png'>");
+} 
+else if(sign.toLowerCase() == "scorpio"){
+	document.write("<img width='200' src='https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Scorpio.svg/2000px-Scorpio.svg.png'>");
+}
+else {
+	document.write(sign + " is not a valid sign.")
+}
+
+var today = new Date();
+//0 = Sunday
+//1 = Monday etc.
+//Output a message "Happy Monday" IF it's Monday
+if (today.getDay() == 1){
+	document.write("<h3>Happy Monday</h3>");
+}
+else if(today.getDay() == 2){
+	document.write("<h3>Troublesome Tuesday</h3>");
+}
+else if(today.getDay() == 3){
+	document.write("<h3>Worry-free Wednesday</h3>");
+}
+
+//TO DO: Finish up Assignment 3 - Horoscope for ALL SIGNS and DAYS
+
+</script>
+</body>
+</html>

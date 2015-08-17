@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+<style>
+
+h2 {
+	display:none;
+}
+</style>
+<script src="jquery-2.1.4.js"></script>
+<script>
+jQuery(document).ready(function(){
+	//Review API and fade out over 4 seconds
+	// 1 second = 1000 milliseconds
+	jQuery("h1").fadeOut(4000);
+	//Lab: Slowly fade in a subheader
+	jQuery("h2").fadeIn(4000);
+	jQuery("body").css("background-color", "lightgrey");
+	//Lab: Change colors of headers
+	jQuery("body").css("font-family", "sans-serif");
+	jQuery("h1").css("color", "lime");
+	jQuery("h2").css({"color":"magenta",
+					  "font-family":"monospace"
+					 });
+});
+
+</script>
+</head>
+<body>
+
+<h1>Hello jQuery!</h1>
+<h2>Getting started...</h2>
+</body>
+</html>

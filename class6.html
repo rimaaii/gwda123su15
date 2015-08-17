@@ -5,31 +5,43 @@
 <style>
 
 h2 {
+
+
 	display:none;
 }
 </style>
-<script src="jquery-2.1.4.js"></script>
+<!-- <script src="jquery-2.1.4.js"></script> -->
+<script src="http://code.jquery.com/jquery-2.1.4.js"></script>
 <script>
-jQuery(document).ready(function(){
+//Alternative: $(function(){....})
+$(document).ready(function(){
 	//Review API and fade out over 4 seconds
 	// 1 second = 1000 milliseconds
-	jQuery("h1").fadeOut(4000);
+	$("h1").fadeOut(4000);
 	//Lab: Slowly fade in a subheader
-	jQuery("h2").fadeIn(4000);
-	jQuery("body").css("background-color", "lightgrey");
+	$("h2").fadeIn(4000);
+	$("body").css("background-color", "lightgrey");
 	//Lab: Change colors of headers
-	jQuery("body").css("font-family", "sans-serif");
-	jQuery("h1").css("color", "lime");
-	jQuery("h2").css({"color":"magenta",
+	$("body").css("font-family", "sans-serif");
+	$("h1").css("color", "lime");
+	$("h2").css({"color":"magenta",
 					  "font-family":"monospace"
-					 });
+				});
+	//Adding content
+	$("div").text("<h3>I am learning jQuery.</h3>");
+	$("div").html("<h3>I am learning jQuery.</h3>");
+
+	//animate the logo
+	$("img").animate({"width":"200px","margin-top":"20px", "margin-left" : "200px"});
 });
 
 </script>
 </head>
 <body>
-
+<img src="http://i.imgur.com/EECoLNl.png" width="100"/>
 <h1>Hello jQuery!</h1>
 <h2>Getting started...</h2>
+<div></div>
+
 </body>
 </html>

@@ -8,6 +8,16 @@
 #main{
 text-align:center;
 }
+
+img.greyBlur{
+-webkit-filter: blur(2px) grayscale(100%);
+filter: blur(2px) grayscale(100%);	
+}
+
+figure{
+	display: inline-block;
+}
+
 </style>
 </head>
 <body>
@@ -39,9 +49,9 @@ text-align:center;
 <div class="hipsum"><p>Neutra vegan stumptown small batch street art. Single-origin coffee cray mustache, Pinterest meditation keytar meh post-ironic whatever. Slow-carb jean shorts Schlitz literally fanny pack tofu, lomo cardigan single-origin coffee meggings master cleanse hoodie. Selvage artisan cardigan direct trade biodiesel trust fund. Readymade swag paleo, jean shorts banjo PBR mlkshk tattooed. Next level master cleanse Austin chambray. Tofu semiotics gluten-free forage keffiyeh farm-to-table, meditation disrupt skateboard actually lomo butcher iPhone.</p><p>Authentic shabby chic try-hard semiotics, whatever banjo slow-carb flannel YOLO keytar four dollar toast. Viral crucifix American Apparel, meditation wolf messenger bag cred 3 wolf moon cardigan photo booth Williamsburg. Tumblr Neutra master cleanse sriracha, selfies heirloom Marfa Godard banjo small batch polaroid food truck. Vinyl cliche deep v, normcore pop-up Shoreditch Austin 90's. Keytar actually cray next level, Pitchfork listicle PBR. Blue Bottle cold-pressed skateboard, High Life forage umami locavore lo-fi selvage twee Vice Thundercats Helvetica. Odd Future Helvetica pickled, mumblecore twee heirloom umami slow-carb artisan deep v fingerstache swag McSweeney's.</p><p>Bitters trust fund asymmetrical art party. American Apparel selvage tofu trust fund, irony XOXO hoodie. Banjo health goth cray polaroid. DIY fingerstache beard, church-key ethical swag put a bird on it deep v VHS artisan kitsch banh mi tousled. Echo Park try-hard literally, quinoa four dollar toast yr you probably haven't heard of them. You probably haven't heard of them seitan biodiesel food truck cronut, Carles literally taxidermy blog retro hella put a bird on it beard. Slow-carb lo-fi quinoa umami American Apparel selvage Echo Park Schlitz viral, ugh bitters try-hard.</p><p>Semiotics brunch tilde, squid synth gluten-free Echo Park umami tote bag. Truffaut retro small batch fingerstache, Austin biodiesel slow-carb authentic food truck PBR&amp;B iPhone. DIY cardigan pour-over messenger bag, meditation Neutra small batch kogi you probably haven't heard of them raw denim. Wayfarers letterpress biodiesel Williamsburg. Post-ironic meggings fap cardigan, twee irony heirloom beard sriracha raw denim occupy pug narwhal seitan. Chambray chia four dollar toast, mumblecore food truck quinoa actually next level hashtag hoodie. Actually paleo PBR salvia jean shorts Thundercats.</p></div>
 <h2>See my work.</h2>
 
-<img src="http://lorempixel.com/g/300/200/city/1">
-<img src="http://lorempixel.com/g/300/200/city/2">
-<img src="http://lorempixel.com/g/300/200/city/3">
+<figure><img src="http://lorempixel.com/300/200/city/1"></figure>
+<figure><img src="http://lorempixel.com/300/200/city/2"></figure>
+<figure><img src="http://lorempixel.com/300/200/city/3"></figure>
 
 
 </div>
@@ -77,6 +87,23 @@ $("h3").hover(function(){
 function(){
 	$(".hipsum").stop().slideUp();
 });
+
+$("img").addClass("greyBlur");
+$("img").after("<figcaption>See more ></figcaption>");
+
+//LAB: On hover in, show full color, on hover out, show grayscale
+//LAB: On hover in, unblur, otherwise show blurred -webkit-filter: blur(3px);
+//LAB: hide figcaption, on hover - slide it down!
+$("img").hover(function(){
+	$(this).removeClass("greyBlur").addClass("pull-up").css("border-radius","10px");
+
+}, function(){
+	//return to no border radius when user hovers out
+	$(this).css("border-radius","0px").addClass("greyBlur");
+
+
+});
+
 });
 </script>
 </body>

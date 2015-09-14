@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body{
+		text-align: center;
+	}
+
+	.box{
+		border: 1px solid grey;
+		padding: 20px;
+		float: left;
+		margin-top: 20px;
+		margin-left: 10px;
+	}
+
+	.selected{
+		border: 1px solid red;
+	}
+
+	.wrapper{
+		width: 425px;
+		margin: 0 auto;
+	}
+
+	</style>
+</head>
+<body>
+
+<h1>Chose your Option</h1>
+<div class="wrapper">
+<div class="box">Option 1</div>
+<div class="box">Option 2</div>
+<div class="box">Option 3</div>
+<div class="box">Option 4</div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script type="text/javascript">
+	
+	//LAB:
+	//Add hover animation and checkbox on selected items
+
+	$(document).ready(function(){
+
+		$(".box").click(function(){
+			$this = $(this);
+			//Unselect all divs
+			$(".box").removeClass("selected");
+			//Select only the one div that was clicked
+			$this.addClass("selected");
+		});
+
+		$(".box").hover(function(){
+			$this = $(this);
+			////USE easeOutBounce from easings.net
+			$this.animate({"margin-top":"0px"}, 1000, 'easeInOutBack');
+		},
+		function(){
+			$this = $(this);
+			$this.animate({"margin-top":"20px"});
+		});
+
+	});
+
+</script>
+</body>
+</html>
